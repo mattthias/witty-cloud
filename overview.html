@@ -1,0 +1,384 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Overview &mdash; MicroPython Witty 0.0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="MicroPython Witty 0.0.1 documentation" href="index.html"/>
+        <link rel="next" title="Network" href="network.html"/>
+        <link rel="prev" title="Setup" href="setup.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> MicroPython Witty
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="setup.html">Setup</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#pinout">Pinout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hello-world">&#8220;Hello World&#8221;</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hello-world-microcontroller-style">&#8220;Hello World&#8221; microcontroller style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-the-integrated-hardware">Using the integrated hardware</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#multi-color-led">Multi-color LED</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#light-dependent-resistor-ldr">Light Dependent Resistor (LDR)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#push-buttons">Push buttons</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="network.html">Network</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">MicroPython Witty</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Overview</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/overview.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="overview">
+<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="pinout">
+<h2>Pinout<a class="headerlink" href="#pinout" title="Permalink to this headline">¶</a></h2>
+<a class="reference internal image-reference" href="_images/witty_cloud_pinout.jpg"><img alt="Witty Cloud ESP8266 board" src="_images/witty_cloud_pinout.jpg" style="width: 640px;" /></a>
+<p>The AI Thinker Witty Cloud board (Image stolen from <a class="reference external" href="http://www.schatenseite.de/en/2016/04/22/esp8266-witty-cloud-module/">http://www.schatenseite.de/en/2016/04/22/esp8266-witty-cloud-module/</a>).</p>
+<p>The witty board consists of two stacked pcbs (printed circuit board). The upper
+pcb carries pin headers to connect both pcbs, the ESP8266 microcontroller (the
+big metal square), a multi color LED (Light Emitting Diode), a small blue LED,
+a light dependent resistor (LDR), a push button and a micro usb connector
+(only for power).</p>
+<p>The lower board carries an usb-to-serial converter chip (CH341), a micro usb
+port (for programming and for power), two push buttons (one is the reset button)
+and the pin headers to connect to the upper pcb.</p>
+<p>The boards come pre-flashed with a firmware bound to a chinese cloud service.
+As the ESP8266 is a very cheap and powerful SoC alternative firmwares where
+developed by communities around the world. The is a LUA interpreter
+(<a class="reference external" href="https://nodemcu.readthedocs.io/en/master/">https://nodemcu.readthedocs.io/en/master/</a>), support for the Arduino IDE
+(<a class="reference external" href="https://arduino-esp8266.readthedocs.io/en/latest/">https://arduino-esp8266.readthedocs.io/en/latest/</a>), a Javascript Interpreter
+(<a class="reference external" href="https://www.espruino.com/EspruinoESP8266">https://www.espruino.com/EspruinoESP8266</a>) and the most important:  MicroPython
+(<a class="reference external" href="http://micropython.org/">http://micropython.org/</a>).</p>
+<p>To flash the MicroPython firmware on the board follow these instructions:</p>
+<p><a class="reference external" href="http://docs.micropython.org/en/v1.9.2/esp8266/esp8266/tutorial/intro.html#intro">http://docs.micropython.org/en/v1.9.2/esp8266/esp8266/tutorial/intro.html#intro</a></p>
+</div>
+<div class="section" id="hello-world">
+<h2>&#8220;Hello World&#8221;<a class="headerlink" href="#hello-world" title="Permalink to this headline">¶</a></h2>
+<p>Connect the micro usb connector in the lower board with your computer and open
+the terminal application:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">picocom</span> <span class="o">-</span><span class="n">b</span> <span class="mi">115200</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">ttyUSB0</span>
+</pre></div>
+</div>
+<p>You will see the MicroPython REPL (Read Evaluate Print Loop) prompt:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>Now start to type Python commands!</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello MicroPython!&quot;</span><span class="p">)</span>
+<span class="go">Hello MicroPython!</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>Micropython is a Python 3 implementation compact enough to run in just 256k of
+code space and 16k of RAM. It aims to be as compatible with normal Python as
+possible.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">123456789</span> <span class="o">*</span> <span class="mi">123456789</span>
+<span class="go">15241578750190521</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">while</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%d</span><span class="s2"> &quot;</span> <span class="o">%</span> <span class="n">a</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">a</span><span class="o">+=</span><span class="mi">1</span>
+<span class="gp">...</span>
+<span class="gp">...</span>
+<span class="gp">...</span>
+<span class="go">1 2 3 4 5 6 7 8 9 &gt;&gt;&gt;</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="hello-world-microcontroller-style">
+<h2>&#8220;Hello World&#8221; microcontroller style<a class="headerlink" href="#hello-world-microcontroller-style" title="Permalink to this headline">¶</a></h2>
+<p>The microcontroller &#8220;Hello World&#8221; is to blink a LED.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">machine</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">green</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">green</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">green</span><span class="o">.</span><span class="n">off</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">time</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">green</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
+<span class="gp">... </span>    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">green</span><span class="o">.</span><span class="n">off</span><span class="p">()</span>
+<span class="gp">...</span>
+<span class="gp">...</span>
+<span class="gp">...</span>
+</pre></div>
+</div>
+<p>More explanation here: <a class="reference external" href="http://docs.micropython.org/en/v1.9.2/esp8266/esp8266/tutorial/pins.html">http://docs.micropython.org/en/v1.9.2/esp8266/esp8266/tutorial/pins.html</a></p>
+</div>
+<div class="section" id="using-the-integrated-hardware">
+<h2>Using the integrated hardware<a class="headerlink" href="#using-the-integrated-hardware" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="multi-color-led">
+<h3>Multi-color LED<a class="headerlink" href="#multi-color-led" title="Permalink to this headline">¶</a></h3>
+<p>The multi-color LED consists of three single LEDs. They can be controlled
+separately.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="74%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">color</th>
+<th class="head">connected to pin</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>red</td>
+<td>15</td>
+</tr>
+<tr class="row-odd"><td>green</td>
+<td>12</td>
+</tr>
+<tr class="row-even"><td>blue</td>
+<td>13</td>
+</tr>
+</tbody>
+</table>
+<p>Use the &#8216;&#8217;machine&#8217;&#8217; module to create &#8216;&#8217;Pin&#8217;&#8217; objects.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">machine</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">red</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">green</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">blue</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>These pins are digital only 1 (LED turned on) or 0 (LED turned off) is possible.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">red</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">green</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">blue</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>There is no default function to toggle the state of a pin but this is simple
+to implement:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">toggle</span><span class="p">(</span><span class="n">led</span><span class="p">):</span>
+        <span class="n">led</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="ow">not</span> <span class="n">led</span><span class="o">.</span><span class="n">value</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>To fade the LEDs use Pulse Wide Modulation (<a class="reference external" href="http://docs.micropython.org/en/v1.9.2/esp8266/esp8266/tutorial/pwm.html">http://docs.micropython.org/en/v1.9.2/esp8266/esp8266/tutorial/pwm.html</a>):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">machine</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">blue</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">PWM</span><span class="p">(</span><span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">blue</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">blue</span><span class="o">.</span><span class="n">freq</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">314</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">blue</span><span class="o">.</span><span class="n">duty</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">i</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span><span class="o">*</span><span class="mi">1000</span><span class="p">))</span>
+<span class="gp">... </span>    <span class="n">time</span><span class="o">.</span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>PWM also allows to mix the three different colors (as you TV worked back than).</p>
+</div>
+<div class="section" id="light-dependent-resistor-ldr">
+<h3>Light Dependent Resistor (LDR)<a class="headerlink" href="#light-dependent-resistor-ldr" title="Permalink to this headline">¶</a></h3>
+<p>The Light Dependent Resistor (LDR, <a class="reference external" href="https://en.wikipedia.org/wiki/Photoresistor">https://en.wikipedia.org/wiki/Photoresistor</a>)
+is connected to the ADC (Analog to Digital Conversion) pin of the ESP8266.</p>
+<p>The read() function returns values between 0 (0.0V) and 1024 (1.0V). For the
+LDR the values are 0 (no light) and 1024 (bright light.)</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">machine</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ldr</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">ADC</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ldr</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="go">623</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="push-buttons">
+<h3>Push buttons<a class="headerlink" href="#push-buttons" title="Permalink to this headline">¶</a></h3>
+<p>The buttons are connected to the pins 4 (push button) and 0 (&#8220;flash&#8221; button).
+The third button is connected to the RST pin and resets the board when pushed.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">machine</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">button</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flash_button</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">PULL_UP</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">button</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">button</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>  <span class="c1"># pressed</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flash_button</span><span class="o">.</span><span class="n">value</span><span class="p">()</span> <span class="c1"># pressed</span>
+<span class="go">0</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="network.html" class="btn btn-neutral float-right" title="Network" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="setup.html" class="btn btn-neutral" title="Setup" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Matthias Schmitz.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,275 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Setup &mdash; MicroPython Witty 0.0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="MicroPython Witty 0.0.1 documentation" href="index.html"/>
+        <link rel="next" title="Overview" href="overview.html"/>
+        <link rel="prev" title="Welcome to the Witty Cloud workshop!" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> MicroPython Witty
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#serial-connection">Serial connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#upload-and-download-code-with-mpfshell">Upload and download code with mpfshell</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="network.html">Network</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">MicroPython Witty</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Setup</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/setup.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="setup">
+<h1>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="serial-connection">
+<h2>Serial connection<a class="headerlink" href="#serial-connection" title="Permalink to this headline">¶</a></h2>
+<p>The Witty Cloud board has two micro usb ports. Only the connector on the lower
+board can be used to communicate with the board. The connector on the upper
+board is only usable for power supply.</p>
+<p>To connect to the board you need a micro usb cable and a terminal program. On
+Linux install and use &#8216;&#8217;picocom&#8217;&#8216;. You may need to add your user to the</p>
+<blockquote>
+<div><p>&#8216;&#8217;dialout&#8217;&#8217; to allow access to the serial ports:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>sudo adduser ${USER} dialout
+sudo apt-get install picocom
+picocom -b 115200 /dev/ttyUSB0
+</pre></div>
+</div>
+</div></blockquote>
+<p>To end the session press ctrl + a and than ctrl + k</p>
+<p>On MacOS use screen:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">screen</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">tty</span><span class="o">....</span>  <span class="mi">115200</span>
+</pre></div>
+</div>
+<p>To quit the session press Ctrl + A and than k.</p>
+</div>
+<div class="section" id="upload-and-download-code-with-mpfshell">
+<h2>Upload and download code with mpfshell<a class="headerlink" href="#upload-and-download-code-with-mpfshell" title="Permalink to this headline">¶</a></h2>
+<p>Install mpfshell (<a class="reference external" href="https://github.com/wendlers/mpfshell">https://github.com/wendlers/mpfshell</a>) to up- and download
+files into the flash filesystem of the board:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">user</span> <span class="n">mpfshell</span>
+</pre></div>
+</div>
+<p>Start the shell with:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$HOME/.local/bin/mpfshell
+# or without the annoying colors
+$HOME/.local/bin/mpfshell --nocolor
+</pre></div>
+</div>
+<p>On the command prompt type &#8216;&#8217;help&#8217;&#8217; to see all available commands. Connect to
+your board, list the contents of the flash file system</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mpfs</span> <span class="p">[</span><span class="o">/</span><span class="p">]</span><span class="o">&gt;</span> <span class="n">help</span>
+
+<span class="n">Documented</span> <span class="n">commands</span> <span class="p">(</span><span class="nb">type</span> <span class="n">help</span> <span class="o">&lt;</span><span class="n">topic</span><span class="o">&gt;</span><span class="p">):</span>
+<span class="o">========================================</span>
+<span class="n">EOF</span>  <span class="n">cd</span>     <span class="n">exec</span>  <span class="n">get</span>   <span class="n">lcd</span>  <span class="n">lpwd</span>  <span class="n">md</span>    <span class="n">mput</span>  <span class="n">mrm</span>   <span class="n">put</span>  <span class="n">repl</span>
+<span class="n">cat</span>  <span class="n">close</span>  <span class="n">exit</span>  <span class="n">help</span>  <span class="n">lls</span>  <span class="n">ls</span>    <span class="n">mget</span>  <span class="n">mpyc</span>  <span class="nb">open</span>  <span class="n">pwd</span>  <span class="n">rm</span>
+
+<span class="n">mpfs</span> <span class="p">[</span><span class="o">/</span><span class="p">]</span><span class="o">&gt;</span> <span class="nb">open</span> <span class="n">ttyUSB0</span>
+<span class="n">Connected</span> <span class="n">to</span> <span class="n">esp8266</span>
+<span class="n">mpfs</span> <span class="p">[</span><span class="o">/</span><span class="p">]</span><span class="o">&gt;</span> <span class="n">ls</span>
+
+<span class="n">Remote</span> <span class="n">files</span> <span class="ow">in</span> <span class="s1">&#39;/&#39;</span><span class="p">:</span>
+
+        <span class="n">boot</span><span class="o">.</span><span class="n">py</span>
+
+<span class="n">mpfs</span> <span class="p">[</span><span class="o">/</span><span class="p">]</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Download a file:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mpfs</span> <span class="p">[</span><span class="o">/</span><span class="p">]</span><span class="o">&gt;</span> <span class="n">get</span> <span class="n">boot</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>Upload a file:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mpfs</span> <span class="p">[</span><span class="o">/</span><span class="p">]</span><span class="o">&gt;</span> <span class="n">put</span> <span class="n">main</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="overview.html" class="btn btn-neutral float-right" title="Overview" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Welcome to the Witty Cloud workshop!" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Matthias Schmitz.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
