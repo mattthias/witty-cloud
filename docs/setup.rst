@@ -65,3 +65,37 @@ Download a file::
 Upload a file::
 
 	mpfs [/]> put main.py
+
+
+
+
+WebREPL (web browser interactive prompt)
+----------------------------------------
+
+WebREPL (REPL over WebSockets, accessible via a web browser) is an
+experimental feature available in ESP8266 port. Download web client
+from https://github.com/micropython/webrepl (hosted version available
+at http://micropython.org/webrepl), and configure it by executing::
+
+    import webrepl_setup
+
+and following on-screen instructions. After reboot, it will be available
+for connection. If you disabled automatic start-up on boot, you may
+run configured daemon on demand using::
+
+    import webrepl
+    webrepl.start()
+
+The supported way to use WebREPL is by connecting to ESP8266 access point,
+but the daemon is also started on STA interface if it is active, so if your
+router is set up and works correctly, you may also use WebREPL while connected
+to your normal Internet access point (use the ESP8266 AP connection method
+if you face any issues).
+
+Besides terminal/command prompt access, WebREPL also has provision for file
+transfer (both upload and download). Web client has buttons for the
+corresponding functions, or you can use command-line client ``webrepl_cli.py``
+from the repository above.
+
+See the MicroPython forum for other community-supported alternatives
+to transfer files to ESP8266.
