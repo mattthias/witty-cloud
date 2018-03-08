@@ -141,6 +141,7 @@ To fade the LEDs use Pulse Wide Modulation (http://docs.micropython.org/en/v1.9.
 ::
 
 	>>> import machine
+	>>> import math
 	>>> blue = machine.PWM(machine.Pin(13, machine.Pin.OUT))
 	>>> blue.init()
 	>>> blue.freq(1000)
